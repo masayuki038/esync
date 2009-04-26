@@ -1,18 +1,14 @@
-require 'rubygems'
-require 'win32/changenotify'
 require 'date'
 require 'md5'
 require 'logger'
-require 'win32/dir'
-
-include Win32
+require 'fileutils'
 
 class EsyncObserver
 
   def initialize
-    @srcdir = 'C:\Users\masayuki\work\ruby\test'
-    @destdir = 'C:\Users\masayuki\work\ruby\test2'
-    @backupdir = 'C:\Users\masayuki\work\ruby\backup'
+    @srcdir = 'C:\Users\masayuki\work\ruby\esync\backup\test'
+    @destdir = 'C:\Users\masayuki\work\ruby\esync\backup\test2'
+    @backupdir = 'C:\Users\masayuki\work\ruby\esync\backup'
     @table = {}
     #@logger = Logger.new('C:\Users\masayuki\work\ruby\esync.log')
     @logger = Logger.new(STDOUT)
